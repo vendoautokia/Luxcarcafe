@@ -1,0 +1,25 @@
+﻿@{
+   var db = Database.Open("bakery"); 
+   var selectQueryString = "SELECT * FROM Products ORDER BY Name"; 
+   }
+<html> 
+    <body> 
+        <h1>Listado de Autos en Alquiler</h1> 
+        <table> 
+            <tr>
+                <th>Id</th> 
+                <th>Product</th> 
+                <th>Description</th> 
+                <th>Price</th> 
+            </tr>@foreach(var row in db.Query(selectQueryString))
+                  {<tr> 
+            <td>@row.Id</td> 
+            <td>@row.Name</td> 
+            <td>@row.Description</td> 
+            <td align="right">
+@row.Price</td> </tr> 
+                        }
+        </table> 
+    </body> 
+</html>
+

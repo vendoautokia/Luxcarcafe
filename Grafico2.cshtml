@@ -1,0 +1,10 @@
+﻿@{ 
+var db = Database.Open("Bakery"); 
+var dbdata = db.Query("SELECT Name, description, Price FROM Products"); 
+var myChart = new Chart(width: 600, height: 400) 
+  .AddTitle("Alquiler según modelo") 
+  .AddSeries(chartType: "Pie",
+     xValue: dbdata, xField: "Name", 
+     yValues: dbdata, yFields: "Price")      
+  .Write();
+}

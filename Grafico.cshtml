@@ -1,0 +1,8 @@
+﻿@{ 
+var db = Database.Open("Bakery"); 
+var dbdata = db.Query("SELECT Name, description, Price FROM Products"); 
+var myChart = new Chart(width: 600, height: 500) 
+  .AddTitle("Precio de un alquiler") 
+  .DataBindTable(dataSource: dbdata, xField: "Name") 
+  .Write();   
+}

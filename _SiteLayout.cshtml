@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8" />
+        <title>Luxury Cars & Cafe (Rental Car)- @Page.Title</title>
+        <!--<link href="~/Content/Site.css" rel="stylesheet" />-->
+        <link href="~/Content/StyleSheet.css" REL="stylesheet"
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <script src="~/Scripts/modernizr-2.6.2.js"></script>
+        <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+        <script src="~/Scripts/facebooks.js"></script>    
+        @RenderSection("Scripts", required: false)
+    </head>
+    <body>        
+        <audio controls autoplay>            
+            <source src="instrumental.mp3">
+        </audio> 
+
+        <div id="page">
+            <header>
+                <p class="site-title"><a href="~/">Luxury Cars & Cafe</a></p>
+                <nav>
+                    <ul>
+                        <li><a href="~/">Inicio</a></li>
+                        <li><a href="~/About">Acerca de nosotros</a></li>
+                        <li><a href="Page.cshtml">Video</a></li>
+                        <li><a href="Grafico.cshtml">Precio</a></li>
+                        <li><a href="Grafico2.cshtml">Grafica</a></li>
+                        <li><a href="Prueba_csharp1.cshtml">C#1</a></li>
+                        <li><a href="Prueba_visual1.vbhtml">Visual 1</a></li>
+                        <li><a href="Prueba_csharp2.cshtml">C#2</a></li>                        
+                        <li><a href="Prueba_visual2.vbhtml">Visual 2</a></li>
+                        <!-- <li><a href="Facebook.cshtml">Facebook</a></li>  -->
+                    </ul>
+                </nav>
+            </header>
+            <div id="body">
+                @RenderBody()
+            </div>
+            <footer>
+                &copy;@DateTime.Now.Year - Luxury Cars & Cafe
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
+                    fjs.parentNode.insertBefore(js, fjs);
+                  }(document, 'script', 'facebook-jssdk'));</script>
+                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+            </footer>
+        </div>
+    </body>
+</html>
